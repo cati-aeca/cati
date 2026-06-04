@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #F8FAFC; /* Fundo cinza claríssimo */
+    background-color: #F8FAFC; 
     color: #334155;
 }
 
-/* Estrutura do Cabeçalho - Forçar Fundo Branco */
+/* Estrutura do Cabeçalho */
 .main-header {
-    background-color: #FFFFFF !important; /* O !important garante que o fundo fica branco */
+    background-color: #FFFFFF;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 15px 40px;
     width: 100%;
@@ -40,25 +40,21 @@ body {
     display: block;
 }
 
-/* FORMATAÇÃO DO TEXTO CENTRAL (Forçar Visibilidade) */
-.header-title {
-    display: block !important;
-}
-
+/* Formatação do Texto Central */
 .header-title h1 {
-    font-size: 22px !important;
-    font-weight: 800 !important;
-    color: #434B73 !important; /* Azul Escuro bem visível */
+    font-size: 22px;
+    font-weight: 800;
+    color: #434B73; /* Azul Escuro Institucional */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: center;
 }
 
 .header-title h1 span {
-    display: block !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    color: #00F2FE !important; /* Azul Elétrico CATI */
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #00F2FE; /* Azul Elétrico CATI */
     margin-top: 4px;
     letter-spacing: 1px;
 }
@@ -70,9 +66,9 @@ body {
         gap: 15px;
     }
     .header-title h1 {
-        font-size: 18px !important;
+        font-size: 18px;
     }
     .header-title h1 span {
-        font-size: 13px !important;
+        font-size: 13px;
     }
 }
