@@ -7,69 +7,72 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #F8FAFC; /* Fundo cinza claríssimo e moderno */
+    background-color: #F8FAFC; /* Fundo cinza claríssimo */
     color: #334155;
 }
 
-/* Estrutura do Cabeçalho */
+/* Estrutura do Cabeçalho - Forçar Fundo Branco */
 .main-header {
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); /* Sombra leve para dar relevo */
+    background-color: #FFFFFF !important; /* O !important garante que o fundo fica branco */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     padding: 15px 40px;
     width: 100%;
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between; /* Separa os 3 elementos (Esquerda, Centro, Direita) */
-    align-items: center; /* Alinha tudo verticalmente ao centro */
+    justify-content: space-between;
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Tamanho do Logótipo CATI */
+/* Tamanho dos Logótipos */
 .header-logo-cati img {
     height: 65px;
     width: auto;
     display: block;
 }
 
-/* Tamanho do Logótipo da Escola */
 .header-logo-escola img {
     height: 50px;
     width: auto;
     display: block;
 }
 
-/* Formatação do Texto Central */
+/* FORMATAÇÃO DO TEXTO CENTRAL (Forçar Visibilidade) */
+.header-title {
+    display: block !important;
+}
+
 .header-title h1 {
-    font-size: 22px;
-    font-weight: 800;
-    color: #434B73; /* Azul Escuro do logo da Escola Carlos Amarante */
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #434B73 !important; /* Azul Escuro bem visível */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: center;
 }
 
 .header-title h1 span {
-    display: block; /* Força o texto "Tecnologia e Inovação" a ir para a linha de baixo */
-    font-size: 15px;
-    font-weight: 600;
-    color: #00F2FE; /* Azul Elétrico do logo do CATI */
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #00F2FE !important; /* Azul Elétrico CATI */
     margin-top: 4px;
     letter-spacing: 1px;
 }
 
-/* Responsividade para ecrãs de telemóvel */
+/* Responsividade para telemóveis */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 15px;
     }
     .header-title h1 {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     .header-title h1 span {
-        font-size: 13px;
+        font-size: 13px !important;
     }
 }
