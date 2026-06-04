@@ -1,0 +1,75 @@
+/* Reset básico de página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8FAFC; /* Fundo cinza claríssimo e moderno */
+    color: #334155;
+}
+
+/* Estrutura do Cabeçalho */
+.main-header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); /* Sombra leve para dar relevo */
+    padding: 15px 40px;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Separa os 3 elementos (Esquerda, Centro, Direita) */
+    align-items: center; /* Alinha tudo verticalmente ao centro */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tamanho do Logótipo CATI */
+.header-logo-cati img {
+    height: 65px;
+    width: auto;
+    display: block;
+}
+
+/* Tamanho do Logótipo da Escola */
+.header-logo-escola img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Formatação do Texto Central */
+.header-title h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #434B73; /* Azul Escuro do logo da Escola Carlos Amarante */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.header-title h1 span {
+    display: block; /* Força o texto "Tecnologia e Inovação" a ir para a linha de baixo */
+    font-size: 15px;
+    font-weight: 600;
+    color: #00F2FE; /* Azul Elétrico do logo do CATI */
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+/* Responsividade para ecrãs de telemóvel */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .header-title h1 {
+        font-size: 18px;
+    }
+    .header-title h1 span {
+        font-size: 13px;
+    }
+}
