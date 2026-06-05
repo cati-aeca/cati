@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
-    <!-- Fonte moderna -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap">
 
-    <!-- ESTILO INJETADO DIRETAMENTE PARA FORÇAR O NAVEGADOR A APLICAR O DESIGN -->
     <style>
         * {
             margin: 0;
@@ -32,7 +30,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1350px; /* Alargado ligeiramente para dar mais margem ao texto longo */
             margin: 0 auto;
             padding: 15px 20px;
         }
@@ -50,24 +48,28 @@
             display: block;
         }
 
-        /* TEXTO CENTRAL */
+        /* TEXTO CENTRAL EM LINHA ÚNICA E COR ÚNICA */
+        .header-title {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
         .header-title h1 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
-            color: #434B73; 
+            color: #434B73; /* Cor azul escura uniforme para todo o texto */
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            text-align: center;
-            line-height: 1.2;
+            white-space: nowrap; /* Impede a quebra de linha */
         }
 
         .header-title h1 span {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #00F2FE; 
-            margin-top: 3px;
-            letter-spacing: 1px;
+            display: inline !important; 
+            font-size: 18px;
+            font-weight: 800; /* Igualado ao resto do título */
+            color: #434B73 !important; /* Força a mesma cor azul escura no subtítulo */
+            margin-left: 6px; 
         }
 
         /* MENU HORIZONTAL NUM FRISO ÚNICO */
@@ -78,7 +80,7 @@
         }
 
         .menu-principal {
-            display: flex !important; /* Força o alinhamento horizontal */
+            display: flex !important; 
             flex-direction: row !important;
             justify-content: center; 
             list-style: none !important;
@@ -155,12 +157,22 @@
             visibility: visible;
             transform: translateY(0);
         }
+
+        /* Responsividade para ecrãs mais pequenos */
+        @media (max-width: 1050px) {
+            .header-title h1 {
+                white-space: normal; 
+                font-size: 15px;
+            }
+            .header-title h1 span {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <!-- Linha dos Logos e Título -->
         <div class="header-container">
             <div class="header-logo-cati">
                 <img src="css/assets/cati_logo.png" alt="Logótipo CATI">
@@ -173,7 +185,6 @@
             </div>
         </div>
 
-        <!-- Friso Único do Menu Horizontal -->
         <nav class="main-nav">
             <ul class="menu-principal">
                 <li class="tem-submenu">
