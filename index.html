@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
 
     <style>
         * {
@@ -19,437 +19,56 @@
             color: #334155;
         }
 
-        /* CABEÇALHO (LOGOS + TÍTULO NA MESMA LINHA) */
+        /* CABEÇALHO ÚNICO */
         .main-header {
             background-color: #FFFFFF;
             width: 100%;
             display: block;
         }
 
+        /* CONTAINER MAIS ESTREITO (Aproxima os logos do texto) */
         .header-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1350px; /* Alargado ligeiramente para dar mais margem ao texto longo */
+            justify-content: center; /* Centra os elementos no meio */
+            align-items: center; 
+            max-width: 1100px; /* Reduzido para trazer os logos mais para o centro */
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 20px;
+            gap: 25px; /* Define uma distância fixa e curta entre os logos e o texto */
         }
 
-        /* FORÇAR TAMANHO PEQUENO NOS LOGOTIPOS */
+        /* TAMANHO DOS LOGÓTIPOS */
         .header-logo-cati img {
+            height: 55px !important; 
+            width: auto !important;
+            display: block;
+        }
+
+        .header-logo-escola img {
             height: 50px !important; 
             width: auto !important;
             display: block;
         }
 
-        .header-logo-escola img {
-            height: 45px !important; 
-            width: auto !important;
-            display: block;
-        }
-
-        /* TEXTO CENTRAL EM LINHA ÚNICA E COR ÚNICA */
+        /* TEXTO CENTRAL EM LINHA ÚNICA */
         .header-title {
-            flex: 1;
             text-align: center;
-            padding: 0 20px;
         }
 
         .header-title h1 {
-            font-size: 18px;
-            font-weight: 800;
-            color: #434B73; /* Cor azul escura uniforme para todo o texto */
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap; /* Impede a quebra de linha */
-        }
-
-        .header-title h1 span {
-            display: inline !important; 
-            font-size: 18px;
-            font-weight: 800; /* Igualado ao resto do título */
-            color: #434B73 !important; /* Força a mesma cor azul escura no subtítulo */
-            margin-left: 6px; 
-        }
-
-        /* MENU HORIZONTAL NUM FRISO ÚNICO */
-        .main-nav {
-            background-color: #434B73; 
-            width: 100%;
-            border-top: 1px solid #E2E8F0;
-        }
-
-        .menu-principal {
-            display: flex !important; 
-            flex-direction: row !important;
-            justify-content: center; 
-            list-style: none !important;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .menu-principal > li {
-            position: relative; 
-            list-style: none !important;
-        }
-
-        .menu-principal > li > a {
-            display: block;
-            padding: 14px 20px;
-            color: #FFFFFF;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .menu-principal > li:hover > a {
-            background-color: #313757;
-        }
-
-        /* SUBMENUS (DROPDOWNS) */
-        .submenu {
-            position: absolute;
-            top: 100%; 
-            left: 0;
-            background-color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            list-style: none !important;
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden; 
-            transform: translateY(10px);
-            transition: all 0.2s ease;
-            z-index: 100;
-            padding: 0;
-        }
-
-        .submenu li {
-            list-style: none !important;
-        }
-
-        .submenu li a {
-            display: block;
-            padding: 10px 15px;
-            color: #334155;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px solid #F1F5F9;
-            text-align: left;
-        }
-
-        .submenu li:last-child a {
-            border-bottom: none;
-        }
-
-        .submenu li a:hover {
-            background-color: #F1F5F9;
-            color: #434B73;
-        }
-
-        /* MOSTRAR NO HOVER */
-        .tem-submenu:hover .submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        /* Responsividade para ecrãs mais pequenos */
-        @media (max-width: 1050px) {
-            .header-title h1 {
-                white-space: normal; 
-                font-size: 15px;
-            }
-            .header-title h1 span {
-                font-size: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="main-header">
-        <div class="header-container">
-            <div class="header-logo-cati">
-                <img src="css/assets/cati_logo.png" alt="Logótipo CATI">
-            </div>
-            <div class="header-title">
-                <h1>Carlos Amarante <span>Tecnologia e Inovação</span></h1>
-            </div>
-            <div class="header-logo-escola">
-                <img src="css/assets/carlosamarante-300x80.png" alt="Logótipo Escola Carlos Amarante">
-            </div>
-        </div>
-
-        <nav class="main-nav">
-            <ul class="menu-principal">
-                <li class="tem-submenu">
-                    <a href="#">Sobre Nós</a>
-                    <ul class="submenu">
-                        <li><a href="#">O que fazemos</a></li>
-                        <li><a href="#">Como fazemos</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Notícias</a></li>
-                <li class="tem-submenu">
-                    <a href="#">Atividades</a>
-                    <ul class="submenu">
-                        <li><a href="#">Hexacopter</a></li>
-                        <li><a href="#">ROV</a></li>
-                        <li><a href="#">Foguetes de Água</a></li>
-                        <li><a href="#">Roda de Água</a></li>
-                        <li><a href="#">Conferências</a></li>
-                    </ul>
-                </li>
-                <li class="tem-submenu">
-                    <a href="#">Projeto LIMIAR</a>
-                    <ul class="submenu">
-                        <li><a href="#">LIMIAR 1</a></li>
-                        <li><a href="#">LIMIAR 2</a></li>
-                        <li><a href="#">LIMIAR 3</a></li>
-                    </ul>
-                </li>
-                <li class="tem-submenu">
-                    <a href="#">Estudos</a>
-                    <ul class="submenu">
-                        <li><a href="#">O que fazemos</a></li>
-                        <li><a href="#">Como fazemos</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contactos</a></li>
-            </ul><!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC; 
-            color: #334155;
-        }
-
-        /* CABEÇALHO (LOGOS + TÍTULO NA MESMA LINHA COM ALINHAMENTO VERTICAL PERFEITO) */
-        .main-header {
-            background-color: #FFFFFF;
-            width: 100%;
-            display: block;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Garante que logos e texto alinham perfeitamente pelo centro */
-            max-width: 1400px; /* Alargado para dar mais folga à letra maior */
-            margin: 0 auto;
-            padding: 20px 30px; /* Aumentado o espaçamento interno para respirar melhor */
-        }
-
-        /* FORÇAR TAMANHO SIMÉTRICO NOS LOGOTIPOS */
-        .header-logo-cati img {
-            height: 55px !important; /* Ligeiramente aumentado para equilibrar com o texto maior */
-            width: auto !important;
-            display: block;
-        }
-
-        .header-logo-escola img {
-            height: 50px !important; /* Ligeiramente aumentado para manter a proporção */
-            width: auto !important;
-            display: block;
-        }
-
-        /* TEXTO CENTRAL AMPLIADO E SIMÉTRICO */
-        .header-title {
-            flex: 1;
-            text-align: center;
-            padding: 0 30px;
-        }
-
-        .header-title h1 {
-            font-size: 24px; /* Aumentado de 18px para 24px para ganhar destaque */
-            font-weight: 900; /* Peso máximo para uma presença mais forte e interessante */
+            font-size: 24px; 
+            font-weight: 900; 
             color: #434B73; 
             text-transform: uppercase;
-            letter-spacing: 0.8px; /* Ajuste fino no espaço entre as letras */
+            letter-spacing: 0.8px; 
             white-space: nowrap; 
             line-height: 1;
         }
 
         .header-title h1 span {
             display: inline !important; 
-            font-size: 24px; /* Acompanha o novo tamanho */
-            font-weight: 600; /* Um pouco mais leve que o nome principal para criar contraste de leitura */
-            color: #434B73 !important; 
-            margin-left: 8px; 
-        }
-
-        /* MENU HORIZONTAL NUM FRISO ÚNICO */
-        .main-nav {
-            background-color: #434B73; 
-            width: 100%;
-            border-top: 1px solid #E2E8F0;
-        }
-
-        .menu-principal {
-            display: flex !important; 
-            flex-direction: row !important;
-            justify-content: center; 
-            list-style: none !important;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .menu-principal > li {
-            position: relative; 
-            list-style: none !important;
-        }
-
-        .menu-principal > li > a {
-            display: block;
-            padding: 14px 20px;
-            color: #FFFFFF;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .menu-principal > li:hover > a {
-            background-color: #313757;
-        }
-
-        /* SUBMENUS (DROPDOWNS) */
-        .submenu {
-            position: absolute;
-            top: 100%; 
-            left: 0;
-            background-color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            list-style: none !important;
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden; 
-            transform: translateY(10px);
-            transition: all 0.2s ease;
-            z-index: 100;
-            padding: 0;
-        }
-
-        .submenu li {
-            list-style: none !important;
-        }
-
-        .submenu li a {
-            display: block;
-            padding: 10px 15px;
-            color: #334155;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px solid #F1F5F9;
-            text-align: left;
-        }
-
-        .submenu li:last-child a {
-            border-bottom: none;
-        }
-
-        .submenu li a:hover {
-            background-color: #F1F5F9;
-            color: #434B73;
-        }
-
-        /* MOSTRAR NO HOVER */
-        .tem-submenu:hover .submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC; 
-            color: #334155;
-        }
-
-        /* CABEÇALHO (LOGOS + TÍTULO NA MESMA LINHA COM ALINHAMENTO VERTICAL PERFEITO) */
-        .main-header {
-            background-color: #FFFFFF;
-            width: 100%;
-            display: block;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Garante que logos e texto alinham perfeitamente pelo centro */
-            max-width: 1400px; /* Alargado para dar mais folga à letra maior */
-            margin: 0 auto;
-            padding: 20px 30px; /* Aumentado o espaçamento interno para respirar melhor */
-        }
-
-        /* FORÇAR TAMANHO SIMÉTRICO NOS LOGOTIPOS */
-        .header-logo-cati img {
-            height: 55px !important; /* Ligeiramente aumentado para equilibrar com o texto maior */
-            width: auto !important;
-            display: block;
-        }
-
-        .header-logo-escola img {
-            height: 50px !important; /* Ligeiramente aumentado para manter a proporção */
-            width: auto !important;
-            display: block;
-        }
-
-        /* TEXTO CENTRAL AMPLIADO E SIMÉTRICO */
-        .header-title {
-            flex: 1;
-            text-align: center;
-            padding: 0 30px;
-        }
-
-        .header-title h1 {
-            font-size: 24px; /* Aumentado de 18px para 24px para ganhar destaque */
-            font-weight: 900; /* Peso máximo para uma presença mais forte e interessante */
-            color: #434B73; 
-            text-transform: uppercase;
-            letter-spacing: 0.8px; /* Ajuste fino no espaço entre as letras */
-            white-space: nowrap; 
-            line-height: 1;
-        }
-
-        .header-title h1 span {
-            display: inline !important; 
-            font-size: 24px; /* Acompanha o novo tamanho */
-            font-weight: 600; /* Um pouco mais leve que o nome principal para criar contraste de leitura */
+            font-size: 24px; 
+            font-weight: 600; 
             color: #434B73 !important; 
             margin-left: 8px; 
         }
@@ -538,16 +157,6 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
-        }
-
-        /* Ajuste de responsividade para ecrãs intermédios */
-        @media (max-width: 1200px) {
-            .header-title h1 {
-                font-size: 19px;
-            }
-            .header-title h1 span {
-                font-size: 19px;
-            }
         }
 
         /* Responsividade para ecrãs pequenos */
@@ -570,13 +179,16 @@
 <body>
 
     <header class="main-header">
+        
         <div class="header-container">
             <div class="header-logo-cati">
                 <img src="css/assets/cati_logo.png" alt="Logótipo CATI">
             </div>
+            
             <div class="header-title">
                 <h1>Carlos Amarante <span>Tecnologia e Inovação</span></h1>
             </div>
+            
             <div class="header-logo-escola">
                 <img src="css/assets/carlosamarante-300x80.png" alt="Logótipo Escola Carlos Amarante">
             </div>
