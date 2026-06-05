@@ -14,7 +14,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Faz a página deslizar suavemente ao clicar nos menus */
+            scroll-behavior: smooth; 
         }
 
         body {
@@ -29,7 +29,7 @@
             background-color: #FFFFFF;
             width: 100%;
             display: block;
-            position: sticky; /* Mantém o cabeçalho fixo no topo ao fazer scroll */
+            position: sticky; 
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -154,7 +154,7 @@
 
         /* LAYOUT DAS SECÇÕES DE CONTEÚDO */
         .conteudo-container {
-            max-width: 1100px;
+            max-width: 1000px; /* Reduzido ligeiramente para dar melhor leitura aos parágrafos longos */
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -168,36 +168,98 @@
             text-transform: uppercase;
         }
 
-        /* GRELHA DE NOTÍCIAS */
-        .grid-noticias {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        /* LISTA DE NOTÍCIAS HORIZONTAIS (FEED) */
+        .lista-noticias {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
             margin-bottom: 60px;
         }
 
-        .noticia-card, .projeto-card {
+        /* Cartão de notícia em linha inteira */
+        .noticia-card-horizontal {
+            display: flex;
             background-color: #FFFFFF;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             overflow: hidden;
-            padding: 20px;
+            border: 1px solid #E2E8F0;
+            transition: transform 0.2s;
+        }
+
+        .noticia-card-horizontal:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Imagem à esquerda */
+        .noticia-card-horizontal .noticia-img-box {
+            flex: 0 0 350px; /* Largura fixa para a imagem no computador */
+            background-color: #E2E8F0;
+        }
+
+        .noticia-card-horizontal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Conteúdo de texto à direita */
+        .noticia-card-horizontal .noticia-texto-box {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Tag de Destaque para a primeira (mais recente) */
+        .tag-destaque {
+            align-self: flex-start;
+            background-color: #00F2FE;
+            color: #434B73;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .noticia-card-horizontal h3 {
+            color: #434B73;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .noticia-card-horizontal p {
+            color: #64748B;
+            font-size: 15px;
+        }
+
+        /* PROJETOS (CARDS) */
+        .projeto-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 25px;
             border: 1px solid #E2E8F0;
         }
 
-        .noticia-card img, .projeto-card img {
+        .projeto-card img {
             width: 100%;
-            height: 180px;
+            height: 250px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 15px;
-            background-color: #E2E8F0; /* Fundo cinza caso a imagem falhe */
+            background-color: #E2E8F0;
         }
 
-        .noticia-card h3, .projeto-card h3 {
+        .projeto-card h3 {
             color: #434B73;
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         /* BOTÕES DE LINK */
@@ -212,6 +274,7 @@
             font-size: 13px;
             font-weight: 600;
             transition: background 0.2s;
+            align-self: flex-start;
         }
 
         .btn-link:hover {
@@ -246,11 +309,16 @@
             border-radius: 4px;
         }
 
-        /* Responsividade */
+        /* Responsividade para ecrãs pequenos */
         @media (max-width: 950px) {
             .header-container { flex-direction: column; gap: 15px; }
             .header-title h1 { white-space: normal; font-size: 18px; text-align: center; }
             .header-title h1 span { font-size: 18px; }
+            
+            /* Transforma as notícias horizontais em verticais no telemóvel */
+            .noticia-card-horizontal { flex-direction: column; }
+            .noticia-card-horizontal .noticia-img-box { flex: 0 0 auto; height: 200px; }
+            
             .objetivos-imagens { grid-template-columns: 1fr; }
         }
     </style>
@@ -316,30 +384,49 @@
         <section id="noticias-section">
             <h2 class="seccao-titulo">Notícias do Clube</h2>
             
-            <div class="grid-noticias">
-                <div class="noticia-card">
-                    <img src="css/assets/noticia1.png" alt="Imagem Notícia 1">
-                    <h3>Início das Atividades CATI</h3>
-                    <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos.</p>
+            <div class="lista-noticias">
+                
+                <div class="noticia-card-horizontal">
+                    <div class="noticia-img-box">
+                        <img src="css/assets/noticia4.png" alt="Imagem Notícia 4">
+                    </div>
+                    <div class="noticia-texto-box">
+                        <span class="tag-destaque">Mais Recente</span>
+                        <h3>Preparação para as Conferências</h3>
+                        <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar, onde serão demonstradas as soluções robóticas integradas desenvolvidas pelos nossos alunos ao longo do semestre.</p>
+                    </div>
                 </div>
 
-                <div class="noticia-card">
-                    <img src="css/assets/noticia2.png" alt="Imagem Notícia 2">
-                    <h3>Workshop de Robótica</h3>
-                    <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres.</p>
+                <div class="noticia-card-horizontal">
+                    <div class="noticia-img-box">
+                        <img src="css/assets/noticia3.png" alt="Imagem Notícia 3">
+                    </div>
+                    <div class="noticia-texto-box">
+                        <h3>Novos Componentes LIMIAR</h3>
+                        <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos. Os novos módulos incluem melhorias significativas no processamento e estabilidade do sinal de rádio para as próximas missões.</p>
+                    </div>
                 </div>
 
-                <div class="noticia-card">
-                    <img src="css/assets/noticia3.png" alt="Imagem Notícia 3">
-                    <h3>Novos Componentes LIMIAR</h3>
-                    <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos.</p>
+                <div class="noticia-card-horizontal">
+                    <div class="noticia-img-box">
+                        <img src="css/assets/noticia2.png" alt="Imagem Notícia 2">
+                    </div>
+                    <div class="noticia-texto-box">
+                        <h3>Workshop de Robótica</h3>
+                        <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres. O evento contou com uma grande adesão e permitiu aos novos membros compreender a arquitetura dos microcontroladores utilizados no laboratório.</p>
+                    </div>
                 </div>
 
-                <div class="noticia-card">
-                    <img src="css/assets/noticia4.png" alt="Imagem Notícia 4">
-                    <h3>Preparação para as Conferências</h3>
-                    <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar.</p>
+                <div class="noticia-card-horizontal">
+                    <div class="noticia-img-box">
+                        <img src="css/assets/noticia1.png" alt="Imagem Notícia 1">
+                    </div>
+                    <div class="noticia-texto-box">
+                        <h3>Início das Atividades CATI</h3>
+                        <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos. O plano de atividades inclui novos desafios nas áreas de programação, mecânica de precisão e exploração atmosférica.</p>
+                    </div>
                 </div>
+
             </div>
         </section>
 
