@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
+    <!-- Fonte moderna -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
 
+    <!-- ESTILO INJETADO DIRETAMENTE -->
     <style>
         * {
             margin: 0;
@@ -24,13 +26,10 @@
             line-height: 1.6;
         }
 
-        /* -------------------------------------------------------------
-           REGRA DE OURO: GARANTE QUE TODOS OS PARÁGRAFOS DO SITE 
-           FICAM PERFEITAMENTE JUSTIFICADOS
-        ------------------------------------------------------------- */
+        /* GARANTE QUE TODOS OS PARÁGRAFOS DO SITE FICAM JUSTIFICADOS */
         p {
             text-align: justify !important;
-            text-justify: inter-word; /* Melhora o espaçamento entre palavras em navegadores modernos */
+            text-justify: inter-word;
         }
 
         /* CABEÇALHO ÚNICO */
@@ -204,7 +203,6 @@
         .card-conteudo p {
             color: #475569;
             font-size: 15px;
-            margin-bottom: 15px;
         }
 
         .card-conteudo p:last-of-type {
@@ -432,16 +430,15 @@
 
     <main class="conteudo-container">
 
+        <!-- ================= SECÇÃO: SOBRE NÓS ================= -->
         <section id="sobre-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Sobre Nós</h2>
-            
             <div id="sobre-o-que-fazemos" class="card-conteudo">
                 <h3>O que fazemos</h3>
                 <p>O CATI (Carlos Amarante Tecnologia e Inovação) foca-se na promoção da cultura científica e tecnológica no ambiente escolar. Desenvolvemos projetos multidisciplinares que aliam a robótica, a programação e a engenharia aeroespacial, capacitando os estudantes com ferramentas práticas e metodologias de resolução de problemas do mundo real.</p>
                 <p>Através de sessões práticas laboratoriais, transformamos ideias abstratas em protótipos funcionais, incentivando o trabalho em equipa, a investigação científica autónoma e o espírito crítico na busca por soluções sustentáveis e inovadoras.</p>
                 <img src="css/assets/sobre_o_que_fazemos.png" alt="O que fazemos no CATI">
             </div>
-
             <div id="sobre-como-fazemos" class="card-conteudo">
                 <h3>Como fazemos</h3>
                 <p>A nossa metodologia assenta no conceito do "aprender fazendo" (learning by doing). Os alunos têm acesso direto a hardware especializado, componentes eletrónicos, sistemas de impressão 3D e ambientes de desenvolvimento de software onde desenham, simulam e testam os seus próprios protótipos.</p>
@@ -450,10 +447,12 @@
             </div>
         </section>
 
-
+        <!-- ================= SECÇÃO: NOTÍCIAS ================= -->
         <section id="noticias-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Notícias do Clube</h2>
             <div class="lista-noticias">
+                
+                <!-- Notícia 4 -->
                 <div class="noticia-card-horizontal">
                     <div class="noticia-img-box"><img src="css/assets/noticia4.png" alt="Imagem Notícia 4"></div>
                     <div class="noticia-texto-box">
@@ -462,6 +461,8 @@
                         <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar, onde serão demonstradas as soluções robóticas integradas desenvolvidas pelos nossos alunos ao longo do semestre.</p>
                     </div>
                 </div>
+
+                <!-- Notícia 3 -->
                 <div class="noticia-card-horizontal">
                     <div class="noticia-img-box"><img src="css/assets/noticia3.png" alt="Imagem Notícia 3"></div>
                     <div class="noticia-texto-box">
@@ -469,6 +470,8 @@
                         <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos. Os novos módulos incluem melhorias significativas no processamento e estabilidade do sinal de rádio para as próximas missões.</p>
                     </div>
                 </div>
+
+                <!-- Notícia 2 -->
                 <div class="noticia-card-horizontal">
                     <div class="noticia-img-box"><img src="css/assets/noticia2.png" alt="Imagem Notícia 2"></div>
                     <div class="noticia-texto-box">
@@ -476,6 +479,8 @@
                         <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres. O evento contou com uma grande adesão e permitiu aos novos membros compreender a arquitetura dos microcontroladores utilizados no laboratório.</p>
                     </div>
                 </div>
+
+                <!-- Notícia 1: ATUALIZADA COM O TÍTULO E TEXTO ORIGINAIS CORRIGIDOS -->
                 <div class="noticia-card-horizontal">
                     <div class="noticia-img-box"><img src="css/assets/noticia1.png" alt="Imagem Notícia 1"></div>
                     <div class="noticia-texto-box">
@@ -483,41 +488,37 @@
                         <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos. O plano de atividades inclui novos desafios nas áreas de programação, mecânica de precisão e exploração atmosférica.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
-
+        <!-- ================= SECÇÃO: ATIVIDADES ================= -->
         <section id="atividades-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Atividades</h2>
-
             <div id="ativ-hexacopter" class="card-conteudo">
                 <h3>Hexacopter</h3>
                 <p>A atividade do Hexacopter envolve o design estrutural, montagem e calibração de uma plataforma aérea de seis rotores orientada para missões de mapeamento e recolha de dados ambientais. Os alunos programam os sistemas de voo autónomo e ajustam os ganhos de estabilização giroscópica.</p>
                 <p>Neste projeto, avalia-se a eficiência dos motores, o comportamento das baterias sob carga e os protocolos de comunicação rádio e telemetria, garantindo voos estáveis e seguros para acoplar sensores adicionais de monitorização regional.</p>
                 <img src="css/assets/atividades_hexacopter.png" alt="Projeto Hexacopter">
             </div>
-
             <div id="ativ-rov" class="card-conteudo">
                 <h3>ROV (Remotely Operated Vehicle)</h3>
                 <p>A vertente de exploração subaquática foca-se no desenvolvimento de um ROV capaz de submergir e efetuar inspeções visuais em meios aquáticos. O desafio consiste em projetar uma estrutura totalmente estanque e resistente à pressão hidrostática, controlada remotamente a partir da superfície.</p>
                 <p>Os estudantes trabalham no alinhamento e controlo dos propulsores marítimos, na transmissão de sinal de vídeo analógico ou digital em tempo real e na integração de braços robóticos simples para recolha de pequenas amostras ambientais.</p>
                 <img src="css/assets/atividades_rov.png" alt="Projeto ROV">
             </div>
-
             <div id="ativ-foguetes" class="card-conteudo">
                 <h3>Foguetes de Água</h3>
                 <p>Uma atividade fundamental que introduz conceitos básicos de física, aerodinâmica e mecânica de fluidos através do lançamento de foguetes propulsionados por água e ar pressurizado. Os participantes otimizam o centro de gravidade e o centro de pressão ajustando as aletas estabilizadoras.</p>
                 <p>Realizam-se testes sistemáticos alterando o volume de água e a pressão inicial para estudar o impacto no apogeu do voo. O projeto estende-se ao desenho mecânico de paraquedas autónomos para garantir recuperações bem-sucedidas.</p>
                 <img src="css/assets/atividades_foguetes.png" alt="Atividade de Foguetes de Água">
             </div>
-
             <div id="ativ-roda" class="card-conteudo">
                 <h3>Roda de Água</h3>
                 <p>Dedicada ao estudo das energias renováveis e sustentabilidade, esta atividade propõe a construção de um protótipo de roda hidráulica para conversão de energia cinética em energia elétrica. Analisam-se diferentes geometrias de pás para maximizar o rendimento energético do fluxo de água.</p>
                 <p>Os alunos desenvolvem circuitos de retificação e regulação de tensão ligados a pequenos geradores, compreendendo a importância da eficiência mecânica na produção descentralizada de eletricidade limpa.</p>
                 <img src="css/assets/atividades_roda.png" alt="Projeto Roda de Água">
             </div>
-
             <div id="ativ-conferencias" class="card-conteudo">
                 <h3>Conferências</h3>
                 <p>As Conferências representam o momento de partilha de conhecimento com a comunidade técnica e escolar. Promovemos sessões de apresentação onde as equipas expõem os artigos técnicos, relatórios de missão e pósteres científicos dos projetos desenvolvidos no clube.</p>
@@ -526,7 +527,7 @@
             </div>
         </section>
 
-
+        <!-- ================= SECÇÃO: PROJETO LIMIAR ================= -->
         <section id="limiar-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Projeto LIMIAR</h2>
             <div class="limiar-layout">
@@ -538,21 +539,18 @@
                         <img src="css/assets/objetivos2.png" alt="Objetivo Imagem 2">
                     </div>
                 </div>
-
                 <div id="limiar1" class="projeto-card">
                     <h3>LIMIAR 1</h3>
                     <img src="css/assets/limiar1.png" alt="Protótipo LIMIAR 1">
                     <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
                     <a href="https://exemplo.com/limiar1" target="_blank" class="btn-link">Ver Página do Projeto →</a>
                 </div>
-
                 <div id="limiar2" class="projeto-card">
                     <h3>LIMIAR 2</h3>
                     <img src="css/assets/limiar2.png" alt="Protótipo LIMIAR 2">
                     <p>Evolução da plataforma com a inclusão de módulos de comunicação de longo alcance (LoRa), gravação de dados em cartões SD e sistemas ativos de recuperação.</p>
                     <a href="https://exemplo.com/limiar2" target="_blank" class="btn-link">Ver Página do Projeto →</a>
                 </div>
-
                 <div id="limiar3" class="projeto-card">
                     <h3>LIMIAR 3</h3>
                     <img src="css/assets/limiar3.png" alt="Protótipo LIMIAR 3">
@@ -562,17 +560,15 @@
             </div>
         </section>
 
-
+        <!-- ================= SECÇÃO: ESTUDOS ================= -->
         <section id="estudos-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Estudos</h2>
-
             <div id="estudos-o-que-fazemos" class="card-conteudo">
                 <h3>O que fazemos</h3>
                 <p>Na área de Estudos, realizamos a compilação teórica e a análise matemática dos dados recolhidos durante as missões de campo e lançamentos. Esta vertente foca-se na elaboração de modelos preditivos e relatórios científicos, permitindo aos alunos consolidar conhecimentos curriculares de Física, Química e Geometria Aplicada.</p>
                 <p>Os grupos de trabalho analisam estatísticas de telemetria, avaliam curvas de rendimento energético e desenvolvem simulações numéricas complexas, transformando dados brutos colhidos pelos sensores em conclusões académicas validadas e estruturadas.</p>
                 <img src="css/assets/estudos_o_que_fazemos.png" alt="O que fazemos em Estudos">
             </div>
-
             <div id="estudos-como-fazemos" class="card-conteudo">
                 <h3>Como fazemos</h3>
                 <p>Utilizamos ferramentas modernas de análise computacional, folhas de cálculo avançadas e software open-source para a modelação e tratamento de dados gráficos. O processo inicia-se com a extração dos ficheiros de log gravados nos cartões SD acoplados aos protótipos aéreos e subaquáticos.</p>
