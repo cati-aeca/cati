@@ -24,6 +24,15 @@
             line-height: 1.6;
         }
 
+        /* -------------------------------------------------------------
+           REGRA DE OURO: GARANTE QUE TODOS OS PARÁGRAFOS DO SITE 
+           FICAM PERFEITAMENTE JUSTIFICADOS
+        ------------------------------------------------------------- */
+        p {
+            text-align: justify !important;
+            text-justify: inter-word; /* Melhora o espaçamento entre palavras em navegadores modernos */
+        }
+
         /* CABEÇALHO ÚNICO */
         .main-header {
             background-color: #FFFFFF;
@@ -196,7 +205,6 @@
             color: #475569;
             font-size: 15px;
             margin-bottom: 15px;
-            text-align: justify;
         }
 
         .card-conteudo p:last-of-type {
@@ -277,12 +285,41 @@
         }
 
         /* PROJETO LIMIAR */
+        .projeto-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 25px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: #E2E8F0;
+        }
+
+        .projeto-card h3 {
+            color: #434B73;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
         .objetivos-box {
             background-color: #EBF8FF;
             border-left: 5px solid #00F2FE;
             padding: 25px;
             border-radius: 4px;
             margin-bottom: 30px;
+        }
+
+        .objetivos-box h3 {
+            color: #434B73;
+            margin-bottom: 10px;
         }
 
         .objetivos-imagens {
@@ -310,10 +347,17 @@
             font-size: 13px;
             font-weight: 600;
             transition: background 0.2s;
+            align-self: flex-start;
         }
 
         .btn-link:hover {
             background-color: #313757;
+        }
+
+        .limiar-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         /* Responsividade para ecrãs pequenos */
@@ -401,7 +445,7 @@
             <div id="sobre-como-fazemos" class="card-conteudo">
                 <h3>Como fazemos</h3>
                 <p>A nossa metodologia assenta no conceito do "aprender fazendo" (learning by doing). Os alunos têm acesso direto a hardware especializado, componentes eletrónicos, sistemas de impressão 3D e ambientes de desenvolvimento de software onde desenham, simulam e testam os seus próprios protótipos.</p>
-                <p>Contamos com uma structure de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
+                <p>Contamos com uma estrutura de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
                 <img src="css/assets/sobre_como_fazemos.png" alt="Como trabalhamos no CATI">
             </div>
         </section>
@@ -435,12 +479,8 @@
                 <div class="noticia-card-horizontal">
                     <div class="noticia-img-box"><img src="css/assets/noticia1.png" alt="Imagem Notícia 1"></div>
                     <div class="noticia-texto-box">
-                        <h3>Palestra de outono</h3>
-                        <p>A palestra de outono foi a primeira actividade realizada em 15 e 16 de outubro de 2025, tendo sido apresentados, pelos alunos do CATI, todos os projetos do clube para este ano lectivo. Constituiu uma forma de apresentar o clube aos alunos da escola bem como de motivar a adesão de outros para projetos desafiadores e motivadores, capazes de agregar valor ao conhecimento já adquirido bem como se assumem como facilitadores de aprendizagens diferentes das realizadas em contexto de sala de aula.
-Cada aluno coordenador de equipa apresentou o seu projecto: o ISAVE - inserir link para o projecto - (Samuel), o ROV (Vicente), os estudos a realizar, nomeadamente o controlo de nível de água numa bacia hidrográfica (Emanuel) e ainda, a roda de água (Catarina e Elisabete? Ou quem foi), que aproveitando 
-Apresentaram-se também os resultados emergentes da missão LIMIAR2, bem como um vídeo (https://www.youtube.com/@CATIAECA2026) que ilustra o desempenho alcançado.
-Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIMIAR 3, que irá decorrer durante todo o ano lectivo, encontrando-se agendado para dia 29 de junho de 2026 o seu lançamento.
-</p>
+                        <h3>Início das Atividades CATI</h3>
+                        <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos. O plano de atividades inclui novos desafios nas áreas de programação, mecânica de precisão e exploração atmosférica.</p>
                     </div>
                 </div>
             </div>
@@ -501,7 +541,6 @@ Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIM
 
                 <div id="limiar1" class="projeto-card">
                     <h3>LIMIAR 1</h3>
-                    <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
                     <img src="css/assets/limiar1.png" alt="Protótipo LIMIAR 1">
                     <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
                     <a href="https://exemplo.com/limiar1" target="_blank" class="btn-link">Ver Página do Projeto →</a>
@@ -509,7 +548,6 @@ Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIM
 
                 <div id="limiar2" class="projeto-card">
                     <h3>LIMIAR 2</h3>
-                    <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
                     <img src="css/assets/limiar2.png" alt="Protótipo LIMIAR 2">
                     <p>Evolução da plataforma com a inclusão de módulos de comunicação de longo alcance (LoRa), gravação de dados em cartões SD e sistemas ativos de recuperação.</p>
                     <a href="https://exemplo.com/limiar2" target="_blank" class="btn-link">Ver Página do Projeto →</a>
@@ -517,7 +555,6 @@ Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIM
 
                 <div id="limiar3" class="projeto-card">
                     <h3>LIMIAR 3</h3>
-                    <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
                     <img src="css/assets/limiar3.png" alt="Protótipo LIMIAR 3">
                     <p>A vertente mais avançada do projeto, integrando processamento de imagem em tempo real, inteligência artificial integrada e estabilização giroscópica total.</p>
                     <a href="https://exemplo.com/limiar3" target="_blank" class="btn-link">Ver Página do Projeto →</a>
