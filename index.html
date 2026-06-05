@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
+    <!-- Fonte moderna -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
 
+    <!-- ESTILO INJETADO DIRETAMENTE -->
     <style>
         * {
             margin: 0;
@@ -240,7 +242,7 @@
             margin-bottom: 15px;
         }
 
-        /* Layout Horizontal (Notícias 2 e 3) */
+        /* Layout Horizontal para Notícias Individuais */
         .noticia-flex-layout {
             display: flex;
             gap: 25px;
@@ -266,7 +268,7 @@
             display: block;
         }
 
-        /* Grelha de Imagens (Duas a Duas em cada linha) */
+        /* Grelha de Imagens duas a duas */
         .grelha-duas-a-duas {
             display: grid;
             grid-template-columns: 1fr 1fr; 
@@ -288,9 +290,9 @@
             display: block;
         }
 
-        /* Classes específicas de ajuste de tamanho */
+        /* Ajustes específicos de tamanhos */
         .grelha-duas-a-duas .img-item.img-aumentada {
-            height: 300px; /* Imagens aumentadas */
+            height: 300px; /* Imagens exp1 e exp2 aumentadas */
         }
 
         .grelha-duas-a-duas .img-item.img-marcelo-box {
@@ -481,6 +483,7 @@
 
     <main class="conteudo-container">
 
+        <!-- ================= SECÇÃO: SOBRE NÓS ================= -->
         <section id="sobre-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Sobre Nós</h2>
             <div id="sobre-o-que-fazemos" class="card-conteudo">
@@ -492,23 +495,24 @@
             <div id="sobre-como-fazemos" class="card-conteudo">
                 <h3>Como fazemos</h3>
                 <p>A nossa metodologia assenta no conceito do "aprender fazendo" (learning by doing). Os alunos têm acesso direto a hardware especializado, componentes eletrónicos, sistemas de impressão 3D e ambientes de desenvolvimento de software onde desenham, simulam e testam os seus próprios protótipos.</p>
-                <p>Contamos com uma estrutura de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
+                <p>Contamos com uma estrutura de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. This ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
                 <img src="css/assets/sobre_como_fazemos.png" alt="Como trabalhamos no CATI">
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: NOTÍCIAS ================= -->
         <section id="noticias-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Notícias do Clube</h2>
             <div class="lista-noticias">
                 
+                <!-- Notícia com o Marcelo (Restaurada por completo no topo) -->
                 <div class="noticia-card-bloco">
                     <span class="tag-destaque">Mais Recente</span>
-                    <h3>Fórum Nacional dos Clubes de Ciência Viva na Escola</h3>
-                    <p>No passado dia 27 de março, três professores e dez alunos do Clube de Ciência Viva da Escola Secundária Carlos Amarante, no qual se insere o CATI, deslocaram-se a Santarém para participarem no Fórum Nacional de Ciência Viva na Escola, realizado no CNEMA - Centro Nacional de Exposições e Mercados Agrícolas.</p>
-                    <p>A nossa participação visou mostrar o trabalho realizado pelos alunos ao longo do ano lectivo e divulgar o trabalho científico que fazemos. Por outro lado, também permitiu aquilatar e observar o que outros clubes, noutras escolas fazem e, sobretudo, como fazem.</p>
-                    <p>O nosso stand despertou muita curiosidade, tendo sido visitado por muitos alunos, professores e investigadores, aos quais foi apresentado e explicado o que fazemos e porque nos dedicamos a investigar e conhecer o meio que nos rodeia, seja a água seja o ar.</p>
-                    <p>Durante o período da manhã participámos na sessão de abertura e ao início da tarde, foi a nossa vez de apresentar a nossa comunicação no “Clubes Ciência Viva em palco”, na Ignite Iastro e no “Talk-show: Steam Cells Rock”</p>
+                    <h3>O Senhor Presidente da República, Professor Marcelo Rebelo de Sousa, visitou o stand do CATI</h3>
+                    <p>No passado dia 27 de março, o stand do CATI recebeu a prestigiante visita do Senhor Presidente da República, Professor Marcelo Rebelo de Sousa. Durante a visita, os alunos tiveram a oportunidade única de apresentar os projetos em desenvolvimento, demonstrando o funcionamento dos protótipos e partilhando o entusiasmo pela investigação científica e inovação tecnológica que caracteriza o clube.</p>
+                    <p>O Senhor Presidente manifestou grande interesse pelas explicações dos jovens investigadores, elogiando o dinamismo, a dedicação e o espírito criativo de toda a equipa do CATI, incentivando a continuação do excelente trabalho desenvolvido em prol da cultura científica escolar.</p>
                     
+                    <!-- Imagens associadas organizadas e formatadas conforme pedido -->
                     <div class="grelha-duas-a-duas">
                         <div class="img-item img-aumentada"><img src="css/assets/exp1.jpg" alt="Fórum Ciência Viva Exp 1"></div>
                         <div class="img-item img-aumentada"><img src="css/assets/exp2.jpg" alt="Fórum Ciência Viva Exp 2"></div>
@@ -517,6 +521,16 @@
                     </div>
                 </div>
 
+                <!-- Notícia: Fórum Nacional dos Clubes de Ciência Viva na Escola -->
+                <div class="noticia-card-bloco">
+                    <h3>Fórum Nacional dos Clubes de Ciência Viva na Escola</h3>
+                    <p>No passado dia 27 de março, três professores e dez alunos do Clube de Ciência Viva da Escola Secundária Carlos Amarante, no qual se insere o CATI, deslocaram-se a Santarém para participarem no Fórum Nacional de Ciência Viva na Escola, realizado no CNEMA - Centro Nacional de Exposições e Mercados Agrícolas.</p>
+                    <p>A nossa participação visou mostrar o trabalho realizado pelos alunos ao longo do ano lectivo e divulgar o trabalho científico que fazemos. Por outro lado, também permitiu aquilatar e observar o que outros clubes, noutras escolas fazem e, sobretudo, como fazem.</p>
+                    <p>O nosso stand despertou muita curiosidade, tendo sido visitado por muitos alunos, professores e investigadores, aos quais foi apresentado e explicado o que fazemos e porque nos dedicamos a investigar e conhecer o meio que nos rodeia, seja a água seja o ar.</p>
+                    <p>Durante o período da manhã participámos na sessão de abertura e ao início da tarde, foi a nossa vez de apresentar a nossa comunicação no “Clubes Ciência Viva em palco”, na Ignite Iastro e no “Talk-show: Steam Cells Rock”</p>
+                </div>
+
+                <!-- Notícia 3: III Encontro de Ciência e Espaço, uminho -->
                 <div class="noticia-card-bloco">
                     <div class="noticia-flex-layout">
                         <div class="noticia-texto-box">
@@ -534,6 +548,7 @@
                     </div>
                 </div>
 
+                <!-- Notícia 2: Skylab - um desafio a todo o Agrupamento -->
                 <div class="noticia-card-bloco">
                     <div class="noticia-flex-layout">
                         <div class="noticia-texto-box">
@@ -543,7 +558,7 @@
                             <p>A participação ficou aquém das nossas expectativas, com a participação de duas turmas do ensino pré-escolar, uma do 1º ciclo, e duas do ensino secundário (científico e ensino profissional).</p>
                             <p>O júri deliberou pela realização dos seguintes projectos:</p>
                             <p><em>Ana Cristina – coloca-os tu, sff</em></p>
-                            <p>As turmas dos projectos selecionados foram apoiadas, por elementos do CATI, na concretização do seu projecto, nomeadamente na compreensão da fenomenologia associada, na seleção de sensores e no tratamento de dados, sendo que este apoio vai decorrer até ao momento do lançamento.</p>
+                            <p>As turmas dos projectos selecionados foram apoiadas, por elements do CATI, na concretização do seu projecto, nomeadamente na compreensão da fenomenologia associada, na seleção de sensores e no tratamento de dados, sendo que este apoio vai decorrer até ao momento do lançamento.</p>
                         </div>
                         <div class="noticia-img-box">
                             <img src="css/assets/skylab.jpeg" alt="Projeto Skylab">
@@ -551,6 +566,7 @@
                     </div>
                 </div>
 
+                <!-- Notícia 1: Palestra de outono -->
                 <div class="noticia-card-bloco">
                     <h3>Palestra de outono</h3>
                     <p>A palestra de outono foi a primeira actividade realizada em 15 e 16 de outubro de 2025, tendo sido apresentados, pelos alunos do CATI, todos os projetos do clube para este ano lectivo. Constituiu uma forma de apresentar o clube aos alunos da escola bem como de motivar a adesão de outros para projetos desafiadores e motivadores, capazes de agregar valor ao conhecimento já adquirido bem como se assumem como facilitadores de aprendizagens diferentes das realizadas em contexto de sala de aula.</p>
@@ -558,6 +574,7 @@
                     <p>Apresentaram-se também os resultados emergentes da missão LIMIAR2, bem como um vídeo (<a href="https://www.youtube.com/@CATIAECA2026" target="_blank" class="noticia-link">https://www.youtube.com/@CATIAECA2026</a>) que ilustra o desempenho alcançado.</p>
                     <p>Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIMIAR 3, que irá decorrer durante todo o ano lectivo, encontrando-se agendado para dia 29 de junho de 2026 o seu lançamento.</p>
                     
+                    <!-- Grelha com as 7 imagens surgindo duas a duas por linha após o texto respetivo -->
                     <div class="grelha-duas-a-duas">
                         <div class="img-item"><img src="css/assets/pdo.1.jpeg" alt="Palestra de outono 1"></div>
                         <div class="img-item"><img src="css/assets/pdo.2.jpeg" alt="Palestra de outono 2"></div>
@@ -572,11 +589,12 @@
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: ATIVIDADES ================= -->
         <section id="atividades-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Atividades</h2>
             <div id="ativ-hexacopter" class="card-conteudo">
                 <h3>Hexacopter</h3>
-                <p>A atividade do Hexacopter Corresponde ao design estrutural, montagem e calibração de uma plataforma aérea de seis rotores orientada para missões de mapeamento e recolha de dados ambientais. Os alunos programam os sistemas de voo autónomo e ajustam os ganhos de estabilização giroscópica.</p>
+                <p>A atividade do Hexacopter envolve o design estrutural, montagem e calibração de uma plataforma aérea de seis rotores orientada para missões de mapeamento e recolha de dados ambientais. Os alunos programam os sistemas de voo autónomo e ajustam os ganhos de estabilização giroscópica.</p>
                 <p>Neste projeto, avalia-se a eficiência dos motores, o comportamento das baterias sob carga e os protocolos de comunicação rádio e telemetria, garantindo voos estáveis e seguros para acoplar sensores adicionais de monitorização regional.</p>
                 <img src="css/assets/atividades_hexacopter.png" alt="Projeto Hexacopter">
             </div>
@@ -606,6 +624,7 @@
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: PROJETO LIMIAR ================= -->
         <section id="limiar-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Projeto LIMIAR</h2>
             <div class="limiar-layout">
@@ -638,6 +657,7 @@
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: ESTUDOS ================= -->
         <section id="estudos-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Estudos</h2>
             <div id="estudos-o-que-fazemos" class="card-conteudo">
