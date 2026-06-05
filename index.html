@@ -154,9 +154,13 @@
 
         /* LAYOUT DAS SECÇÕES DE CONTEÚDO */
         .conteudo-container {
-            max-width: 1000px; /* Reduzido ligeiramente para dar melhor leitura aos parágrafos longos */
+            max-width: 1000px; 
             margin: 40px auto;
             padding: 0 20px;
+        }
+
+        .seccao-bloco {
+            margin-bottom: 70px;
         }
 
         .seccao-titulo {
@@ -168,15 +172,53 @@
             text-transform: uppercase;
         }
 
+        /* CARDS PADRÃO PARA SUBMENUS (SOBRE NÓS / ATIVIDADES / LIMIAR) */
+        .card-conteudo {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 30px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 35px;
+        }
+
+        .card-conteudo h3 {
+            color: #434B73;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-transform: uppercase;
+            border-left: 4px solid #434B73;
+            padding-left: 10px;
+        }
+
+        .card-conteudo p {
+            color: #475569;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .card-conteudo p:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        .card-conteudo img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #E2E8F0;
+            display: block;
+        }
+
         /* LISTA DE NOTÍCIAS HORIZONTAIS (FEED) */
         .lista-noticias {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            margin-bottom: 60px;
         }
 
-        /* Cartão de notícia em linha inteira */
         .noticia-card-horizontal {
             display: flex;
             background-color: #FFFFFF;
@@ -191,9 +233,8 @@
             transform: translateY(-2px);
         }
 
-        /* Imagem à esquerda */
         .noticia-card-horizontal .noticia-img-box {
-            flex: 0 0 350px; /* Largura fixa para a imagem no computador */
+            flex: 0 0 350px; 
             background-color: #E2E8F0;
         }
 
@@ -204,7 +245,6 @@
             display: block;
         }
 
-        /* Conteúdo de texto à direita */
         .noticia-card-horizontal .noticia-texto-box {
             padding: 25px;
             display: flex;
@@ -212,7 +252,6 @@
             justify-content: center;
         }
 
-        /* Tag de Destaque para a primeira (mais recente) */
         .tag-destaque {
             align-self: flex-start;
             background-color: #00F2FE;
@@ -237,62 +276,13 @@
             font-size: 15px;
         }
 
-        /* PROJETOS (CARDS) */
-        .projeto-card {
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            overflow: hidden;
-            padding: 25px;
-            border: 1px solid #E2E8F0;
-        }
-
-        .projeto-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            background-color: #E2E8F0;
-        }
-
-        .projeto-card h3 {
-            color: #434B73;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        /* BOTÕES DE LINK */
-        .btn-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #00F2FE;
-            background-color: #434B73;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: background 0.2s;
-            align-self: flex-start;
-        }
-
-        .btn-link:hover {
-            background-color: #313757;
-        }
-
-        /* SECÇÃO PROJETO LIMIAR */
-        .limiar-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
+        /* PROJETO LIMIAR */
         .objetivos-box {
             background-color: #EBF8FF;
             border-left: 5px solid #00F2FE;
             padding: 25px;
             border-radius: 4px;
+            margin-bottom: 30px;
         }
 
         .objetivos-imagens {
@@ -309,16 +299,33 @@
             border-radius: 4px;
         }
 
+        .btn-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #00F2FE;
+            background-color: #434B73;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-link:hover {
+            background-color: #313757;
+        }
+
         /* Responsividade para ecrãs pequenos */
         @media (max-width: 950px) {
             .header-container { flex-direction: column; gap: 15px; }
             .header-title h1 { white-space: normal; font-size: 18px; text-align: center; }
             .header-title h1 span { font-size: 18px; }
             
-            /* Transforma as notícias horizontais em verticais no telemóvel */
             .noticia-card-horizontal { flex-direction: column; }
             .noticia-card-horizontal .noticia-img-box { flex: 0 0 auto; height: 200px; }
             
+            .card-conteudo img { height: 220px; }
             .objetivos-imagens { grid-template-columns: 1fr; }
         }
     </style>
@@ -341,21 +348,21 @@
         <nav class="main-nav">
             <ul class="menu-principal">
                 <li class="tem-submenu">
-                    <a href="#">Sobre Nós</a>
+                    <a href="#sobre-section">Sobre Nós</a>
                     <ul class="submenu">
-                        <li><a href="#">O que fazemos</a></li>
-                        <li><a href="#">Como fazemos</a></li>
+                        <li><a href="#sobre-o-que-fazemos">O que fazemos</a></li>
+                        <li><a href="#sobre-como-fazemos">Como fazemos</a></li>
                     </ul>
                 </li>
                 <li><a href="#noticias-section">Notícias</a></li>
                 <li class="tem-submenu">
-                    <a href="#">Atividades</a>
+                    <a href="#atividades-section">Atividades</a>
                     <ul class="submenu">
-                        <li><a href="#">Hexacopter</a></li>
-                        <li><a href="#">ROV</a></li>
-                        <li><a href="#">Foguetes de Água</a></li>
-                        <li><a href="#">Roda de Água</a></li>
-                        <li><a href="#">Conferências</a></li>
+                        <li><a href="#ativ-hexacopter">Hexacopter</a></li>
+                        <li><a href="#ativ-rov">ROV</a></li>
+                        <li><a href="#ativ-foguetes">Foguetes de Água</a></li>
+                        <li><a href="#ativ-roda">Roda de Água</a></li>
+                        <li><a href="#ativ-conferencias">Conferências</a></li>
                     </ul>
                 </li>
                 <li class="tem-submenu">
@@ -381,61 +388,104 @@
 
     <main class="conteudo-container">
 
-        <section id="noticias-section">
-            <h2 class="seccao-titulo">Notícias do Clube</h2>
+        <section id="sobre-section" class="seccao-bloco">
+            <h2 class="seccao-titulo">Sobre Nós</h2>
             
+            <div id="sobre-o-que-fazemos" class="card-conteudo">
+                <h3>O que fazemos</h3>
+                <p>O CATI (Carlos Amarante Tecnologia e Inovação) foca-se na promoção da cultura científica e tecnológica no ambiente escolar. Desenvolvemos projetos multidisciplinares que aliam a robótica, a programação e a engenharia aeroespacial, capacitando os estudantes com ferramentas práticas e metodologias de resolução de problemas do mundo real.</p>
+                <p>Através de sessões práticas laboratoriais, transformamos ideias abstratas em protótipos funcionais, incentivando o trabalho em equipa, a investigação científica autónoma e o espírito crítico na busca por soluções sustentáveis e inovadoras.</p>
+                <img src="css/assets/sobre_o_que_fazemos.png" alt="O que fazemos no CATI">
+            </div>
+
+            <div id="sobre-como-fazemos" class="card-conteudo">
+                <h3>Como fazemos</h3>
+                <p>A nossa metodologia assenta no conceito do "aprender fazendo" (learning by doing). Os alunos têm acesso direto a hardware especializado, componentes eletrónicos, sistemas de impressão 3D e ambientes de desenvolvimento de software onde desenham, simulam e testam os seus próprios protótipos.</p>
+                <p>Contamos com uma estrutura de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
+                <img src="css/assets/sobre_como_fazemos.png" alt="Como trabalhamos no CATI">
+            </div>
+        </section>
+
+
+        <section id="noticias-section" class="seccao-bloco">
+            <h2 class="seccao-titulo">Notícias do Clube</h2>
             <div class="lista-noticias">
-                
                 <div class="noticia-card-horizontal">
-                    <div class="noticia-img-box">
-                        <img src="css/assets/noticia4.png" alt="Imagem Notícia 4">
-                    </div>
+                    <div class="noticia-img-box"><img src="css/assets/noticia4.png" alt="Imagem Notícia 4"></div>
                     <div class="noticia-texto-box">
                         <span class="tag-destaque">Mais Recente</span>
                         <h3>Preparação para as Conferências</h3>
                         <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar, onde serão demonstradas as soluções robóticas integradas desenvolvidas pelos nossos alunos ao longo do semestre.</p>
                     </div>
                 </div>
-
                 <div class="noticia-card-horizontal">
-                    <div class="noticia-img-box">
-                        <img src="css/assets/noticia3.png" alt="Imagem Notícia 3">
-                    </div>
+                    <div class="noticia-img-box"><img src="css/assets/noticia3.png" alt="Imagem Notícia 3"></div>
                     <div class="noticia-texto-box">
                         <h3>Novos Componentes LIMIAR</h3>
                         <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos. Os novos módulos incluem melhorias significativas no processamento e estabilidade do sinal de rádio para as próximas missões.</p>
                     </div>
                 </div>
-
                 <div class="noticia-card-horizontal">
-                    <div class="noticia-img-box">
-                        <img src="css/assets/noticia2.png" alt="Imagem Notícia 2">
-                    </div>
+                    <div class="noticia-img-box"><img src="css/assets/noticia2.png" alt="Imagem Notícia 2"></div>
                     <div class="noticia-texto-box">
                         <h3>Workshop de Robótica</h3>
                         <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres. O evento contou com uma grande adesão e permitiu aos novos membros compreender a arquitetura dos microcontroladores utilizados no laboratório.</p>
                     </div>
                 </div>
-
                 <div class="noticia-card-horizontal">
-                    <div class="noticia-img-box">
-                        <img src="css/assets/noticia1.png" alt="Imagem Notícia 1">
-                    </div>
+                    <div class="noticia-img-box"><img src="css/assets/noticia1.png" alt="Imagem Notícia 1"></div>
                     <div class="noticia-texto-box">
                         <h3>Início das Atividades CATI</h3>
                         <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos. O plano de atividades inclui novos desafios nas áreas de programação, mecânica de precisão e exploração atmosférica.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
 
-        <section id="limiar-section">
+        <section id="atividades-section" class="seccao-bloco">
+            <h2 class="seccao-titulo">Atividades</h2>
+
+            <div id="ativ-hexacopter" class="card-conteudo">
+                <h3>Hexacopter</h3>
+                <p>A atividade do Hexacopter envolve o design estrutural, montagem e calibração de uma plataforma aérea de seis rotores orientada para missões de mapeamento e recolha de dados ambientais. Os alunos programam os sistemas de voo autónomo e ajustam os ganhos de estabilização giroscópica.</p>
+                <p>Neste projeto, avalia-se a eficiência dos motores, o comportamento das baterias sob carga e os protocolos de comunicação rádio e telemetria, garantindo voos estáveis e seguros para acoplar sensores adicionais de monitorização regional.</p>
+                <img src="css/assets/atividades_hexacopter.png" alt="Projeto Hexacopter">
+            </div>
+
+            <div id="ativ-rov" class="card-conteudo">
+                <h3>ROV (Remotely Operated Vehicle)</h3>
+                <p>A vertente de exploração subaquática foca-se no desenvolvimento de um ROV capaz de submergir e efetuar inspeções visuais em meios aquáticos. O desafio consiste em projetar uma estrutura totalmente estanque e resistente à pressão hidrostática, controlada remotamente a partir da superfície.</p>
+                <p>Os estudantes trabalham no alinhamento e controlo dos propulsores marítimos, na transmissão de sinal de vídeo analógico ou digital em tempo real e na integração de braços robóticos simples para recolha de pequenas amostras ambientais.</p>
+                <img src="css/assets/atividades_rov.png" alt="Projeto ROV">
+            </div>
+
+            <div id="ativ-foguetes" class="card-conteudo">
+                <h3>Foguetes de Água</h3>
+                <p>Uma atividade fundamental que introduz conceitos básicos de física, aerodinâmica e mecânica de fluidos através do lançamento de foguetes propulsionados por água e ar pressurizado. Os participantes otimizam o centro de gravidade e o centro de pressão ajustando as aletas estabilizadoras.</p>
+                <p>Realizam-se testes sistemáticos alterando o volume de água e a pressão inicial para estudar o impacto no apogeu do voo. O projeto estende-se ao desenho mecânico de paraquedas autónomos para garantir recuperações bem-sucedidas.</p>
+                <img src="css/assets/atividades_foguetes.png" alt="Atividade de Foguetes de Água">
+            </div>
+
+            <div id="ativ-roda" class="card-conteudo">
+                <h3>Roda de Água</h3>
+                <p>Dedicada ao estudo das energias renováveis e sustentabilidade, esta atividade propõe a construção de um protótipo de roda hidráulica para conversão de energia cinética em energia elétrica. Analisam-se diferentes geometrias de pás para maximizar o rendimento energético do fluxo de água.</p>
+                <p>Os alunos desenvolvem circuitos de retificação e regulação de tensão ligados a pequenos geradores, compreendendo a importância da eficiência mecânica na produção descentralizada de eletricidade limpa.</p>
+                <img src="css/assets/atividades_roda.png" alt="Projeto Roda de Água">
+            </div>
+
+            <div id="ativ-conferencias" class="card-conteudo">
+                <h3>Conferências</h3>
+                <p>As Conferências representam o momento de partilha de conhecimento com a comunidade técnica e escolar. Promovemos sessões de apresentação onde as equipas expõem os artigos técnicos, relatórios de missão e pósteres científicos dos projetos desenvolvidos no clube.</p>
+                <p>Esta atividade fortalece a comunicação científica, a capacidade de argumentação e o intercâmbio de ideias com convidados externos e especialistas da indústria, abrindo portas a novas parcerias tecnológicas e académicas.</p>
+                <img src="css/assets/atividades_conferencias.png" alt="Conferências e Apresentações">
+            </div>
+        </section>
+
+
+        <section id="limiar-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Projeto LIMIAR</h2>
-            
             <div class="limiar-layout">
-                
                 <div id="limiar-objetivos" class="objetivos-box">
                     <h3>Objetivos Estratégicos</h3>
                     <p>O Projeto LIMIAR tem como principal foco a exploração científica e o desenvolvimento de sistemas eletrónicos e estruturais aplicados a altitudes elevadas, testando a resistência de materiais, recolha de dados meteorológicos e telemetria em tempo real através de engenharia avançada.</p>
@@ -465,7 +515,6 @@
                     <p>A vertente mais avançada do projeto, integrando processamento de imagem em tempo real, inteligência artificial integrada e estabilização giroscópica total.</p>
                     <a href="https://exemplo.com/limiar3" target="_blank" class="btn-link">Ver Página do Projeto →</a>
                 </div>
-
             </div>
         </section>
 
