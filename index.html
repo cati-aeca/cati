@@ -13,10 +13,15 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth; /* Faz a página deslizar suavemente ao clicar nos menus */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC; 
             color: #334155;
+            line-height: 1.6;
         }
 
         /* CABEÇALHO ÚNICO */
@@ -24,37 +29,30 @@
             background-color: #FFFFFF;
             width: 100%;
             display: block;
+            position: sticky; /* Mantém o cabeçalho fixo no topo ao fazer scroll */
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        /* CONTAINER MAIS ESTREITO (Aproxima os logos do texto) */
         .header-container {
             display: flex;
-            justify-content: center; /* Centra os elementos no meio */
+            justify-content: center; 
             align-items: center; 
-            max-width: 1100px; /* Reduzido para trazer os logos mais para o centro */
+            max-width: 1100px; 
             margin: 0 auto;
-            padding: 20px;
-            gap: 25px; /* Define uma distância fixa e curta entre os logos e o texto */
+            padding: 15px 20px;
+            gap: 25px; 
         }
 
         /* TAMANHO DOS LOGÓTIPOS */
-        .header-logo-cati img {
-            height: 55px !important; 
-            width: auto !important;
-            display: block;
-        }
-
-        .header-logo-escola img {
+        .header-logo-cati img, .header-logo-escola img {
             height: 50px !important; 
             width: auto !important;
             display: block;
         }
 
-        /* TEXTO CENTRAL EM LINHA ÚNICA */
-        .header-title {
-            text-align: center;
-        }
-
+        /* TEXTO CENTRAL */
         .header-title h1 {
             font-size: 24px; 
             font-weight: 900; 
@@ -73,7 +71,7 @@
             margin-left: 8px; 
         }
 
-        /* MENU HORIZONTAL NUM FRISO ÚNICO */
+        /* MENU HORIZONTAL */
         .main-nav {
             background-color: #434B73; 
             width: 100%;
@@ -128,10 +126,6 @@
             padding: 0;
         }
 
-        .submenu li {
-            list-style: none !important;
-        }
-
         .submenu li a {
             display: block;
             padding: 10px 15px;
@@ -152,43 +146,125 @@
             color: #434B73;
         }
 
-        /* MOSTRAR NO HOVER */
         .tem-submenu:hover .submenu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        /* Responsividade para ecrãs pequenos */
+        /* LAYOUT DAS SECÇÕES DE CONTEÚDO */
+        .conteudo-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .seccao-titulo {
+            font-size: 28px;
+            color: #434B73;
+            border-bottom: 3px solid #00F2FE;
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* GRELHA DE NOTÍCIAS */
+        .grid-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .noticia-card, .projeto-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .noticia-card img, .projeto-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: #E2E8F0; /* Fundo cinza caso a imagem falhe */
+        }
+
+        .noticia-card h3, .projeto-card h3 {
+            color: #434B73;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* BOTÕES DE LINK */
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #00F2FE;
+            background-color: #434B73;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-link:hover {
+            background-color: #313757;
+        }
+
+        /* SECÇÃO PROJETO LIMIAR */
+        .limiar-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .objetivos-box {
+            background-color: #EBF8FF;
+            border-left: 5px solid #00F2FE;
+            padding: 25px;
+            border-radius: 4px;
+        }
+
+        .objetivos-imagens {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .objetivos-imagens img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Responsividade */
         @media (max-width: 950px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-            }
-            .header-title h1 {
-                white-space: normal; 
-                font-size: 16px;
-            }
-            .header-title h1 span {
-                font-size: 16px;
-            }
+            .header-container { flex-direction: column; gap: 15px; }
+            .header-title h1 { white-space: normal; font-size: 18px; text-align: center; }
+            .header-title h1 span { font-size: 18px; }
+            .objetivos-imagens { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        
         <div class="header-container">
             <div class="header-logo-cati">
                 <img src="css/assets/cati_logo.png" alt="Logótipo CATI">
             </div>
-            
             <div class="header-title">
                 <h1>Carlos Amarante <span>Tecnologia e Inovação</span></h1>
             </div>
-            
             <div class="header-logo-escola">
                 <img src="css/assets/carlosamarante-300x80.png" alt="Logótipo Escola Carlos Amarante">
             </div>
@@ -203,7 +279,7 @@
                         <li><a href="#">Como fazemos</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Notícias</a></li>
+                <li><a href="#noticias-section">Notícias</a></li>
                 <li class="tem-submenu">
                     <a href="#">Atividades</a>
                     <ul class="submenu">
@@ -215,11 +291,12 @@
                     </ul>
                 </li>
                 <li class="tem-submenu">
-                    <a href="#">Projeto LIMIAR</a>
+                    <a href="#limiar-section">Projeto LIMIAR</a>
                     <ul class="submenu">
-                        <li><a href="#">LIMIAR 1</a></li>
-                        <li><a href="#">LIMIAR 2</a></li>
-                        <li><a href="#">LIMIAR 3</a></li>
+                        <li><a href="#limiar-objetivos">Objetivos</a></li>
+                        <li><a href="#limiar1">LIMIAR 1</a></li>
+                        <li><a href="#limiar2">LIMIAR 2</a></li>
+                        <li><a href="#limiar3">LIMIAR 3</a></li>
                     </ul>
                 </li>
                 <li class="tem-submenu">
@@ -233,6 +310,79 @@
             </ul>
         </nav>
     </header>
+
+    <main class="conteudo-container">
+
+        <section id="noticias-section">
+            <h2 class="seccao-titulo">Notícias do Clube</h2>
+            
+            <div class="grid-noticias">
+                <div class="noticia-card">
+                    <img src="css/assets/noticia1.png" alt="Imagem Notícia 1">
+                    <h3>Início das Atividades CATI</h3>
+                    <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos.</p>
+                </div>
+
+                <div class="noticia-card">
+                    <img src="css/assets/noticia2.png" alt="Imagem Notícia 2">
+                    <h3>Workshop de Robótica</h3>
+                    <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres.</p>
+                </div>
+
+                <div class="noticia-card">
+                    <img src="css/assets/noticia3.png" alt="Imagem Notícia 3">
+                    <h3>Novos Componentes LIMIAR</h3>
+                    <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos.</p>
+                </div>
+
+                <div class="noticia-card">
+                    <img src="css/assets/noticia4.png" alt="Imagem Notícia 4">
+                    <h3>Preparação para as Conferências</h3>
+                    <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="limiar-section">
+            <h2 class="seccao-titulo">Projeto LIMIAR</h2>
+            
+            <div class="limiar-layout">
+                
+                <div id="limiar-objetivos" class="objetivos-box">
+                    <h3>Objetivos Estratégicos</h3>
+                    <p>O Projeto LIMIAR tem como principal foco a exploração científica e o desenvolvimento de sistemas eletrónicos e estruturais aplicados a altitudes elevadas, testando a resistência de materiais, recolha de dados meteorológicos e telemetria em tempo real através de engenharia avançada.</p>
+                    <div class="objetivos-imagens">
+                        <img src="css/assets/objetivos1.png" alt="Objetivo Imagem 1">
+                        <img src="css/assets/objetivos2.png" alt="Objetivo Imagem 2">
+                    </div>
+                </div>
+
+                <div id="limiar1" class="projeto-card">
+                    <h3>LIMIAR 1</h3>
+                    <img src="css/assets/limiar1.png" alt="Protótipo LIMIAR 1">
+                    <p>Fase inicial dedicada ao estudo aerodinâmico e à implementação de sensores básicos de pressão e temperatura para validação mecânica do chassis.</p>
+                    <a href="https://exemplo.com/limiar1" target="_blank" class="btn-link">Ver Página do Projeto →</a>
+                </div>
+
+                <div id="limiar2" class="projeto-card">
+                    <h3>LIMIAR 2</h3>
+                    <img src="css/assets/limiar2.png" alt="Protótipo LIMIAR 2">
+                    <p>Evolução da plataforma com a inclusão de módulos de comunicação de longo alcance (LoRa), gravação de dados em cartões SD e sistemas ativos de recuperação.</p>
+                    <a href="https://exemplo.com/limiar2" target="_blank" class="btn-link">Ver Página do Projeto →</a>
+                </div>
+
+                <div id="limiar3" class="projeto-card">
+                    <h3>LIMIAR 3</h3>
+                    <img src="css/assets/limiar3.png" alt="Protótipo LIMIAR 3">
+                    <p>A vertente mais avançada do projeto, integrando processamento de imagem em tempo real, inteligência artificial integrada e estabilização giroscópica total.</p>
+                    <a href="https://exemplo.com/limiar3" target="_blank" class="btn-link">Ver Página do Projeto →</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
