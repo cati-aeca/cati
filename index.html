@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATI - Carlos Amarante Tecnologia e Inovação</title>
+    <!-- Fonte moderna -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
 
+    <!-- ESTILO INJETADO DIRETAMENTE -->
     <style>
         * {
             margin: 0;
@@ -28,6 +30,11 @@
         p {
             text-align: justify !important;
             text-justify: inter-word;
+            margin-bottom: 15px;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
         }
 
         /* CABEÇALHO ÚNICO */
@@ -198,15 +205,6 @@
             padding-left: 10px;
         }
 
-        .card-conteudo p {
-            color: #475569;
-            font-size: 15px;
-        }
-
-        .card-conteudo p:last-of-type {
-            margin-bottom: 20px;
-        }
-
         .card-conteudo img {
             width: 100%;
             height: 350px;
@@ -214,18 +212,16 @@
             border-radius: 6px;
             background-color: #E2E8F0;
             display: block;
+            margin-top: 20px;
         }
 
-        /* =============================================================
-           ESTILOS DO MENU NOTÍCIAS (OTIMIZADOS)
-        ============================================================= */
+        /* ESTILOS DO MENU NOTÍCIAS */
         .lista-noticias {
             display: flex;
             flex-direction: column;
             gap: 35px;
         }
 
-        /* Bloco Base do Card de Notícia */
         .noticia-card-bloco {
             background-color: #FFFFFF;
             border-radius: 8px;
@@ -243,16 +239,10 @@
         .noticia-card-bloco h3 {
             color: #434B73;
             font-size: 22px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        .noticia-card-bloco p {
-            color: #64748B;
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        /* Layout Horizontal Clássico (Usado na Notícia 2 e 3 como base) */
+        /* Layout Horizontal (Usado nas Notícias 2 e 3) */
         .noticia-flex-layout {
             display: flex;
             gap: 25px;
@@ -265,7 +255,7 @@
 
         .noticia-flex-layout .noticia-img-box {
             flex: 0 0 350px;
-            height: 220px;
+            height: 240px;
             background-color: #E2E8F0;
             border-radius: 6px;
             overflow: hidden;
@@ -281,8 +271,8 @@
         /* Grelha de 4 Imagens (2x2) para as Notícias 1 e 4 */
         .grelha-quatro-imagens {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Duas colunas */
-            gap: 15px; /* Espaço entre imagens */
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
             margin-top: 20px;
         }
 
@@ -311,6 +301,20 @@
             border-radius: 4px;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
+        }
+
+        .noticia-link {
+            color: #00F2FE;
+            background-color: #434B73;
+            padding: 2px 6px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .noticia-link:hover {
+            background-color: #313757;
         }
 
         /* PROJETO LIMIAR */
@@ -367,7 +371,7 @@
 
         .btn-link {
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 10px;
             color: #00F2FE;
             background-color: #434B73;
             padding: 8px 15px;
@@ -376,7 +380,6 @@
             font-size: 13px;
             font-weight: 600;
             transition: background 0.2s;
-            align-self: flex-start;
         }
 
         .btn-link:hover {
@@ -462,6 +465,7 @@
 
     <main class="conteudo-container">
 
+        <!-- ================= SECÇÃO: SOBRE NÓS ================= -->
         <section id="sobre-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Sobre Nós</h2>
             <div id="sobre-o-que-fazemos" class="card-conteudo">
@@ -473,67 +477,89 @@
             <div id="sobre-como-fazemos" class="card-conteudo">
                 <h3>Como fazemos</h3>
                 <p>A nossa metodologia assenta no conceito do "aprender fazendo" (learning by doing). Os alunos têm acesso direto a hardware especializado, componentes eletrónicos, sistemas de impressão 3D e ambientes de desenvolvimento de software onde desenham, simulam e testam os seus próprios protótipos.</p>
-                <p>Contamos com uma estrutura de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
+                <p>Contamos com uma structure de mentoria e colaboração próxima, onde os problemas técnicos são discutidos em grupo e solucionados passo a passo. Este ecossistema dinâmico permite documentar progressos, efetuar revisões de engenharia e validar os resultados em cenários práticos de teste.</p>
                 <img src="css/assets/sobre_como_fazemos.png" alt="Como trabalhamos no CATI">
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: NOTÍCIAS (CONTEÚDO COMPLEMENTADO) ================= -->
         <section id="noticias-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Notícias do Clube</h2>
             <div class="lista-noticias">
                 
+                <!-- Notícia 4: Fórum Nacional dos Clubes de Ciência Viva na Escola -->
                 <div class="noticia-card-bloco">
                     <span class="tag-destaque">Mais Recente</span>
-                    <h3>Preparação para as Conferências</h3>
-                    <p>A equipa começou a organizar as apresentações científicas e os pósteres técnicos para a próxima conferência aberta à comunidade escolar, onde serão demonstradas as soluções robóticas integradas desenvolvidas pelos nossos alunos ao longo do semestre.</p>
+                    <h3>Fórum Nacional dos Clubes de Ciência Viva na Escola</h3>
+                    <p>No passado dia 27 de março, três professores e dez alunos do Clube de Ciência Viva da Escola Secundária Carlos Amarante, no qual se insere o CATI, deslocaram-se a Santarém para participarem no Fórum Nacional de Ciência Viva na Escola, realizado no CNEMA - Centro Nacional de Exposições e Mercados Agrícolas.</p>
+                    <p>A nossa participação visou mostrar o trabalho realizado pelos alunos ao longo do ano lectivo e divulgar o trabalho científico que fazemos. Por outro lado, também permitiu aquilatar e observar o que outros clubes, noutras escolas fazem e, sobretudo, como fazem.</p>
+                    <p>O nosso stand despertou muita curiosidade, tendo sido visitado por muitos alunos, professores e investigadores, aos quais foi apresentado e explicado o que fazemos e porque nos dedicamos a investigar e conhecer o meio que nos rodeia, seja a água seja o ar.</p>
+                    <p>Durante o período da manhã participámos na sessão de abertura e ao início da tarde, foi a nossa vez de apresentar a nossa comunicação no “Clubes Ciência Viva em palco”, na Ignite Iastro e no “Talk-show: Steam Cells Rock”</p>
                     
                     <div class="grelha-quatro-imagens">
-                        <div class="img-item"><img src="css/assets/noticia4_1.png" alt="Preparação Conferências 1"></div>
-                        <div class="img-item"><img src="css/assets/noticia4_2.png" alt="Preparação Conferências 2"></div>
-                        <div class="img-item"><img src="css/assets/noticia4_3.png" alt="Preparação Conferências 3"></div>
-                        <div class="img-item"><img src="css/assets/noticia4_4.png" alt="Preparação Conferências 4"></div>
+                        <div class="img-item"><img src="css/assets/noticia4_1.png" alt="Fórum Ciência Viva Imagem 1"></div>
+                        <div class="img-item"><img src="css/assets/noticia4_2.png" alt="Fórum Ciência Viva Imagem 2"></div>
+                        <div class="img-item"><img src="css/assets/noticia4_3.png" alt="Fórum Ciência Viva Imagem 3"></div>
+                        <div class="img-item"><img src="css/assets/noticia4_4.png" alt="Fórum Ciência Viva Imagem 4"></div>
                     </div>
                 </div>
 
+                <!-- Notícia 3: III Encontro de Ciência e Espaço, uminho -->
                 <div class="noticia-card-bloco">
                     <div class="noticia-flex-layout">
                         <div class="noticia-texto-box">
-                            <h3>Novos Componentes LIMIAR</h3>
-                            <p>Chegou o novo lote de hardware aeroespacial que vai permitir expandir os testes de telemetria e controlo de altitude dos protótipos. Os novos módulos incluem melhorias significativas no processamento e estabilidade do sinal de rádio para as próximas missões.</p>
+                            <h3>III Encontro de Ciência e Espaço, uminho</h3>
+                            <p>No passado mês de fevereiro o CATI participou no III Encontro de Ciência e Espaço, realizado na Escola de Ciências da Universidade do Minho, tendo apresentado a comunicação oral “LIMIAR 2: Caracterização experimental da pressão e da temperatura atmosférica num voo com balão estratosférico”, sendo a equipa constituída pelos alunos Samuel e Vicente (11º ano) e Emanuel (12º ano).</p>
+                            <p>A comunicação versou a determinação da altitude atingida pelo balão estratosférico na missão LIMIAR 2, de 21 de julho de 2025, bem como na comparação dos valores da pressão medida no mesmo voo, com valores de modelos atmosféricos utilizados pela comunidade científica.</p>
+                            <p>Os valores mostraram a concordância com o modelo mais refinado – modelo ISA – e em zonas específicas, com os modelos que nessa zona têm significado físico.</p>
+                            <p>As divergências foram explicitadas e explicadas, quer acentuando a não validade do modelo na zona em análise, quer na especificidade do modelo quer ainda na diferença entre as condições globais assumidas face às condições reais da atmosfera, nomeadamente atendendo à hora de lançamento, à evolução das condições meteorológicas no dia do lançamento e ainda às condições estivais e , anticiclónicas verificadas no local de lançamento.</p>
+                            <p>Após a apresentação o CATI foi convidado a elaborar um artigo científico para publicação na revista científica da Escola de Ciências da Universidade do Minho.</p>
+                            <p>No final, o júri atribuiu o primeiro lugar, na categoria de apresentação oral, à comunicação do CATI.</p>
                         </div>
                         <div class="noticia-img-box">
-                            <img src="css/assets/noticia3.png" alt="Imagem Novos Componentes LIMIAR">
+                            <img src="css/assets/noticia3.png" alt="III Encontro de Ciência e Espaço">
                         </div>
                     </div>
                 </div>
 
+                <!-- Notícia 2: Skylab - um desafio a todo o Agrupamento -->
                 <div class="noticia-card-bloco">
                     <div class="noticia-flex-layout">
                         <div class="noticia-img-box">
-                            <img src="css/assets/noticia2.png" alt="Imagem Workshop de Robótica">
+                            <img src="css/assets/noticia2.png" alt="Projeto Skylab">
                         </div>
                         <div class="noticia-texto-box">
-                            <h3>Workshop de Robótica</h3>
-                            <p>Realizou-se a primeira sessão prática de montagem e calibração de sensores aplicados a projetos autónomos e terrestres. O evento contou com uma grande adesão e permitiu aos novos membros compreender a arquitetura dos microcontroladores utilizados no laboratório.</p>
+                            <h3>Skylab - um desafio a todo o Agrupamento</h3>
+                            <p>O projecto Skylab foi uma forma do CATI se abrir à Escola/Agrupamento de Escolas no seu todo, promovendo um concurso de ciência, desde o ensino pré-escolar até ao ensino secundário, de forma a dar a conhecer o clube da escola e também a fomentar o gosto por pensar em experiências científicas passíveis de serem realizadas durante o voo de um balão estratosférico. A ideia e resumo do projecto teria de ser submetido até ? (perguntar à professora Ana Cristina), para ser analisada a sua viabilidade e pertinência científica, por um júri constituído para o efeito. (será de dizer os nomes dos elementos do júri?)</p>
+                            <p>Após a apresentação do regulamento do concurso foi divulgado o cartaz do concurso, quer com afixação nas escolas quer através de email para todos os docentes do Agrupamento de Escolas Carlos Amarante.</p>
+                            <p>A participação ficou aquém das nossas expectativas, com a participação de duas turmas do ensino pré-escolar, uma do 1º ciclo, e duas do ensino secundário (científico e ensino profissional).</p>
+                            <p>O júri deliberou pela realização dos seguintes projectos:</p>
+                            <p><em>Ana Cristina – coloca-os tu, sff</em></p>
+                            <p>As turmas dos projectos selecionados foram apoiadas, por elementos do CATI, na concretização do seu projecto, nomeadamente na compreensão da fenomenologia associada, na seleção de sensores e no tratamento de dados, sendo que este apoio vai decorrer até ao momento do lançamento.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Notícia 1: Palestra de outono -->
                 <div class="noticia-card-bloco">
-                    <h3>Início das Atividades CATI</h3>
-                    <p>O clube de tecnologia deu início aos trabalhos laboratoriais deste ano letivo, focando no desenvolvimento técnico e inovação prática dos alunos. O plano de atividades inclui novos desafios nas áreas de programação, mecânica de precisão e exploração atmosférica.</p>
+                    <h3>Palestra de outono</h3>
+                    <p>A palestra de outono foi a primeira actividade realizada em 15 e 16 de outubro de 2025, tendo sido apresentados, pelos alunos do CATI, todos os projetos do clube para este ano lectivo. Constituiu uma forma de apresentar o clube aos alunos da escola bem como de motivar a adesão de outros para projetos desafiadores e motivadores, capazes de agregar valor ao conhecimento já adquirido bem como se assumem como facilitadores de aprendizagens diferentes das realizadas em contexto de sala de aula.</p>
+                    <p>Cada aluno coordenador de equipa apresentou o seu projecto: o ISAVE - <a href="#" class="noticia-link">inserir link para o projecto</a> - (Samuel), o ROV (Vicente), os estudos a realizar, nomeadamente o controlo de nível de água numa bacia hidrográfica (Emanuel) e ainda, a roda de água (Catarina e Elisabete? Ou quem foi), que aproveitando</p>
+                    <p>Apresentaram-se também os resultados emergentes da missão LIMIAR2, bem como um vídeo (<a href="https://www.youtube.com/@CATIAECA2026" target="_blank" class="noticia-link">https://www.youtube.com/@CATIAECA2026</a>) que ilustra o desempenho alcançado.</p>
+                    <p>Finalmente, como projecto agregador de todo o CATI foi apresentada a missão LIMIAR 3, que irá decorrer durante todo o ano lectivo, encontrando-se agendado para dia 29 de junho de 2026 o seu lançamento.</p>
                     
                     <div class="grelha-quatro-imagens">
-                        <div class="img-item"><img src="css/assets/noticia1_1.png" alt="Início Atividades 1"></div>
-                        <div class="img-item"><img src="css/assets/noticia1_2.png" alt="Início Atividades 2"></div>
-                        <div class="img-item"><img src="css/assets/noticia1_3.png" alt="Início Atividades 3"></div>
-                        <div class="img-item"><img src="css/assets/noticia1_4.png" alt="Início Atividades 4"></div>
+                        <div class="img-item"><img src="css/assets/noticia1_1.png" alt="Palestra de outono Imagem 1"></div>
+                        <div class="img-item"><img src="css/assets/noticia1_2.png" alt="Palestra de outono Imagem 2"></div>
+                        <div class="img-item"><img src="css/assets/noticia1_3.png" alt="Palestra de outono Imagem 3"></div>
+                        <div class="img-item"><img src="css/assets/noticia1_4.png" alt="Palestra de outono Imagem 4"></div>
                     </div>
                 </div>
 
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: ATIVIDADES ================= -->
         <section id="atividades-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Atividades</h2>
             <div id="ativ-hexacopter" class="card-conteudo">
@@ -550,7 +576,7 @@
             </div>
             <div id="ativ-foguetes" class="card-conteudo">
                 <h3>Foguetes de Água</h3>
-                <p>Uma atividade fundamental que introduces conceitos básicos de física, aerodinâmica e mecânica de fluidos através do lançamento de foguetes propulsionados por água e ar pressurizado. Os participantes otimizam o centro de gravidade e o centro de pressão ajustando as aletas estabilizadoras.</p>
+                <p>Uma atividade fundamental que introduz conceitos básicos de física, aerodinâmica e mecânica de fluidos através do lançamento de foguetes propulsionados por água e ar pressurizado. Os participantes otimizam o centro de gravidade e o centro de pressão ajustando as aletas estabilizadoras.</p>
                 <p>Realizam-se testes sistemáticos alterando o volume de água e a pressão inicial para estudar o impacto no apogeu do voo. O projeto estende-se ao desenho mecânico de paraquedas autónomos para garantir recuperações bem-sucedidas.</p>
                 <img src="css/assets/atividades_foguetes.png" alt="Atividade de Foguetes de Água">
             </div>
@@ -568,12 +594,13 @@
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: PROJETO LIMIAR ================= -->
         <section id="limiar-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Projeto LIMIAR</h2>
             <div class="limiar-layout">
                 <div id="limiar-objetivos" class="objetivos-box">
                     <h3>Objetivos Estratégicos</h3>
-                    <p>O Projeto LIMIAR tem como principal foco a exploração científica e o desenvolvimento de sistemas eletrónicos e estruturais aplicados a altitudes elevadas, testando a resistência de materiais, recolha de dados meteorológicos e telemetria em tempo real através de engenharia avançada.</p>
+                    <p>O Projeto LIMIAR tem como principal foco a exploration científica e o desenvolvimento de sistemas eletrónicos e estruturais aplicados a altitudes elevadas, testando a resistência de materiais, recolha de dados meteorológicos e telemetria em tempo real através de engenharia avançada.</p>
                     <div class="objetivos-imagens">
                         <img src="css/assets/objetivos1.png" alt="Objetivo Imagem 1">
                         <img src="css/assets/objetivos2.png" alt="Objetivo Imagem 2">
@@ -600,6 +627,7 @@
             </div>
         </section>
 
+        <!-- ================= SECÇÃO: ESTUDOS ================= -->
         <section id="estudos-section" class="seccao-bloco">
             <h2 class="seccao-titulo">Estudos</h2>
             <div id="estudos-o-que-fazemos" class="card-conteudo">
