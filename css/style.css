@@ -11,10 +11,11 @@ body {
     color: #334155;
 }
 
-/* Estrutura do Cabeçalho */
+/* ==========================================
+   CABEÇALHO (LOGOS + TÍTULO)
+   ========================================== */
 .main-header {
     background-color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     width: 100%;
 }
 
@@ -22,136 +23,151 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 40px 15px 40px;
+    padding: 15px 20px;
 }
 
-/* Tamanho dos Logótipos */
+/* AJUSTE DO LOGÓTIPO DO CATI (Antes estava enorme) */
 .header-logo-cati img {
-    height: 65px;
+    height: 50px; /* Reduzido para alinhar perfeitamente */
     width: auto;
     display: block;
+    object-fit: contain;
 }
 
+/* AJUSTE DO LOGÓTIPO DA ESCOLA */
 .header-logo-escola img {
-    height: 50px;
+    height: 45px; 
     width: auto;
     display: block;
+    object-fit: contain;
 }
 
 /* Formatação do Texto Central */
 .header-title h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
-    color: #434B73; /* Azul Escuro Institucional */
+    color: #434B73; 
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-align: center;
+    line-height: 1.2;
 }
 
 .header-title h1 span {
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
-    color: #00F2FE; /* Azul Elétrico CATI */
-    margin-top: 4px;
+    color: #00F2FE; 
+    margin-top: 3px;
     letter-spacing: 1px;
 }
 
-/* DESIGN DO MENU DE NAVEGAÇÃO */
+/* ==========================================
+   MENU HORIZONTAL (LOGO ABAIXO DO CABEÇALHO)
+   ========================================== */
 .main-nav {
-    background-color: #434B73; /* Fundo azul escuro para destacar os menus */
+    background-color: #434B73; /* Cor sólida de fundo do menu */
     width: 100%;
+    border-top: 1px solid #E2E8F0; /* Linha subtil a separar do cabeçalho */
 }
 
 .menu-principal {
     display: flex;
-    justify-content: center; /* Centra os menus no ecrã */
+    justify-content: center; /* Centra horizontalmente os itens */
     list-style: none;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0;
 }
 
-/* Itens principais do Menu */
+/* Itens Principais Alinhados Lado a Lado */
 .menu-principal > li {
-    position: relative; /* Base para alinhar os submenus */
+    position: relative; 
 }
 
 .menu-principal > li > a {
     display: block;
-    padding: 16px 24px;
+    padding: 14px 20px;
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: background 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease;
 }
 
-/* Mudar de cor ao passar o rato no menu principal */
+/* Efeito ao passar o rato no menu principal */
 .menu-principal > li:hover > a {
     background-color: #313757;
 }
 
-/* DESIGN DOS SUBMENUS (Dropdowns) */
+/* SUBMENUS (Dropdowns) */
 .submenu {
     position: absolute;
-    top: 100%; /* Aparece logo abaixo do botão */
+    top: 100%; 
     left: 0;
     background-color: #FFFFFF;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     list-style: none;
     min-width: 180px;
     opacity: 0;
-    visibility: hidden; /* Escondido por padrão */
+    visibility: hidden; 
     transform: translateY(10px);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     z-index: 100;
-    border-radius: 0 0 4px 4px;
 }
 
 .submenu li a {
     display: block;
-    padding: 12px 20px;
+    padding: 10px 15px;
     color: #334155;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
     border-bottom: 1px solid #F1F5F9;
     transition: background 0.2s ease;
 }
 
-/* Remover a borda no último item do submenu */
 .submenu li:last-child a {
     border-bottom: none;
 }
 
-/* Hover nos itens do submenu */
+/* Hover nos submenus */
 .submenu li a:hover {
     background-color: #F1F5F9;
     color: #434B73;
 }
 
-/* MOSTRAR O SUBMENU AO PASSAR O RATO */
+/* Mostrar submenu no hover */
 .tem-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-/* Responsividade Básica */
+/* Responsividade para ecrãs pequenos */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
     .menu-principal {
         flex-direction: column;
         align-items: center;
     }
+    .menu-principal > li > a {
+        padding: 10px;
+    }
     .submenu {
         position: static;
         box-shadow: none;
         background-color: #313757;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
     }
     .submenu li a {
         color: #E2E8F0;
